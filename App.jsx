@@ -22,7 +22,7 @@ const formato = (num) => {
     const costoN = parseFloat(costo);
     const salarioN = parseFloat(salario);
     if (pago ==  "contado") {
-      if(transmision == "automatica"){
+      if(transmision == "automatica"){ 
         const costE = costoN + 1500.00;
         const costIp = costE * 0.07;
         const costF = costE + costIp;
@@ -32,7 +32,7 @@ const formato = (num) => {
         Total: ${formato(costF)}
         `)
       }
-      else { 
+      else { //transmicion manual
         const costIp = costoN * 0.07;
         const costF = costoN + costIp;
         setTot(`\nCosto original: ${formato(costoN)}
@@ -191,118 +191,142 @@ const formato = (num) => {
 }
 
 const styles = StyleSheet.create({
+
   pantalla: {
     flex: 1,
-    backgroundColor: '#121212',
-   
+    backgroundColor: '#0d0d0d',
+  },
+
+  contenedor: {
+    paddingBottom: 40,
   },
 
   head: {
-    backgroundColor: '#050505',
-    height:100,
-    padding:40,
+    backgroundColor: '#000',
+    height: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#d4af37',
+    elevation: 8,
   },
 
   logo: {
-    width:125,
-    height:85,
-    marginLeft: -32,
-    borderRadius:10,
-    borderBottomColor: '#d4af37'
+    width: 150,
+    height: 120,
+    resizeMode: 'contain',
+    marginTop: 50,  
+  },
+
+  body: {
+    paddingHorizontal: 20,
+    paddingTop: 20,
   },
 
   titulo: {
-    color: '#F5F5F5',
-    textAlign: "center",
-    fontSize: 25,
-    marginTop: 15,
-    marginBottom: 15
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginBottom: 30,
+    letterSpacing: 1,
   },
 
-  Subtitle:{
+  Subtitle: {
+    color: '#d4af37',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 25,
+    marginBottom: 10,
+  },
+
+  texCs: {
     color: '#f5f5f5',
-    fontSize: 15,
-    marginTop: 20,
-    marginLeft: 10
-  },
-
-  body :{
-    flex:1
-  },
-
-  texCs:{
-    color :'#f5f5f5',
-    fontSize: 15,
-    marginBottom : 10,
-    marginTop: 10
-  },
-
-  inCs:{
-    backgroundColor: "#FFD86B",
-    borderRadius: 10,
-    borderWidth: 1.5,
-    borderColor: "#D4AF37",
-    color: "#495959",
     fontSize: 16,
-    paddingHorizontal: 14,
-    paddingVertical: 13
+    marginBottom: 8,
+    marginTop: 12,
+    marginLeft: 3,
+  },
+
+  inCs: {
+    backgroundColor: '#1e1e1e',
+    borderRadius: 15,
+    borderWidth: 1.5,
+    borderColor: '#d4af37',
+    color: '#fff',
+    fontSize: 16,
+    paddingHorizontal: 15,
+    paddingVertical: 14,
+    elevation: 3,
   },
 
   buttons: {
     flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
   },
-
-  boton:
-    {
-     marginTop: 20,
-     alignSelf:"center",
-     borderRadius: 20,
-     backgroundColor:"#d4af37",
-     width:"50%",
-     height:45
-    },
-
-    textoBoton:{
-   color:"#f5f5f5",
-   fontSize:18,
-   textAlign: "center",
-   padding: 10
-   },
 
   textoB: {
     color: '#f5f5f5',
-    padding: 8,
-    textAlign: 'left'
+    fontSize: 16,
   },
-  textoR: {
-    color: '#0000',
-    fontSize:20,
-    marginTop: 20,
-    textAlign: "center"
+
+  boton: {
+    marginTop: 35,
+    alignSelf: 'center',
+    borderRadius: 18,
+    backgroundColor: '#d4af37',
+    width: '80%',
+    height: 55,
+    justifyContent: 'center',
+    elevation: 5,
+    shadowColor: '#d4af37',
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
   },
-  textoM:{
-    color: '#0000',
-    marginLeft: 20,
-    fontSize: 19,
-    flexDirection:"row",
-    justifyContent:"space-between",
-    marginBottom:15
+
+  textoBoton: {
+    color: '#000',
+    fontSize: 18,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    letterSpacing: 1,
   },
+
   resu: {
     marginTop: 35,
-    backgroundColor: '#f5f5f5',
-    borderRadius: 15,
-    width: 375,
-    height:425,
-    marginLeft: 10,
-  }, 
+    backgroundColor: '#1b1b1b',
+    borderRadius: 20,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#d4af37',
+    elevation: 5,
+  },
+
+  textoR: {
+    color: '#d4af37',
+    fontSize: 22,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 15,
+  },
+
+  textoM: {
+    color: '#f5f5f5',
+    fontSize: 16,
+    lineHeight: 28,
+  },
 
   end: {
-    marginTop: 100
+    marginTop: 40,
+    marginBottom: 20,
   },
+
   promo: {
-    color: "#d4af37",
-    textAlign: "center",
-    marginBottom: 10
-  }
+    color: '#d4af37',
+    textAlign: 'center',
+    fontSize: 16,
+    fontStyle: 'italic',
+  },
+
 });
